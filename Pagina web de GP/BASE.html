@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descargas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a0000, #330000, #4d0000);
+            color: #ffffff;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        nav {
+            background-color: rgba(40, 0, 0, 0.8);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+        }
+        
+        nav li {
+            margin: 0 20px;
+        }
+        
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        nav a:hover {
+            background-color: rgba(255, 50, 50, 0.2);
+        }
+        
+        .nav-active {
+            background-color: rgba(255, 50, 50, 0.3);
+        }
+        
+        section {
+            padding: 50px 0;
+            display: none;
+        }
+        
+        .active-section {
+            display: block;
+        }
+        
+        h1, h2 {
+            margin-bottom: 20px;
+            text-align: center;
+            color: #ff6b6b;
+        }
+        
+        .download-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+        
+        .download-table th {
+            background-color: #8b0000;
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+        
+        .download-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .download-table tr:nth-child(even) {
+            background-color: rgba(80, 0, 0, 0.2);
+        }
+        
+        .download-link {
+            display: inline-block;
+            background-color: #b30000;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .download-link:hover {
+            background-color: #ff3333;
+        }
+        
+        footer {
+            background-color: rgba(20, 0, 0, 0.9);
+            padding: 30px 0;
+            margin-top: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#" class="nav-link nav-active" data-section="inicio">Inicio</a></li>
+                <li><a href="#" class="nav-link" data-section="descargas">Descargas</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="inicio" class="active-section">
+            <h1>Información</h1>
+            <h2>Acerca del Juego</h2>
+            <p>Información sobre el juego...</p>
+        </section>
+
+        <section id="descargas">
+            <h1>Descargas</h1>
+            <h2>Versiones Disponibles</h2>
+            <p>Selecciona tu plataforma:</p>
+            
+            <table class="download-table">
+                <thead>
+                    <tr>
+                        <th>Nombre del Archivo</th>
+                        <th>Tamaño</th>
+                        <th>Fecha</th>
+                        <th>Plataforma</th>
+                        <th>Descargar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>rick roll</td>
+                        <td>53,1 MB</td>
+                        <td>14 de septiembre de 2024</td>
+                        <td>Android</td>
+                        <td><a href="rick roll.jpg" class="download-link" download>Descargar</a></td>
+                    </tr>
+                    <tr>
+                        <td>libresprite-development-linux-x86_64.tar.gz</td>
+                        <td>43,9 MB</td>
+                        <td>14 de septiembre de 2024</td>
+                        <td>Linux</td>
+                        <td><a href="libresprite-development-linux-x86_64.tar.gz" class="download-link" download>Descargar</a></td>
+                    </tr>
+                    <tr>
+                        <td>libresprite-development-macos-arm64.dmg</td>
+                        <td>22,3 MB</td>
+                        <td>14 de septiembre de 2024</td>
+                        <td>macOS</td>
+                        <td><a href="libresprite-development-macos-arm64.dmg" class="download-link" download>Descargar</a></td>
+                    </tr>
+                    <tr>
+                        <td>libresprite-development-windows-x86_64.zip</td>
+                        <td>48,6 MB</td>
+                        <td>14 de septiembre de 2024</td>
+                        <td>Windows</td>
+                        <td><a href="libresprite-development-windows-x86_64.zip" class="download-link" download>Descargar</a></td>
+                    </tr>
+                    <tr>
+                        <td>CÓDIGO FUENTE + submódulos.tar.gz</td>
+                        <td>2,06 MB</td>
+                        <td>14 de septiembre de 2024</td>
+                        <td>Fuente</td>
+                        <td><a href="CÓDIGO FUENTE + submódulos.tar.gz" class="download-link" download>Descargar</a></td>
+                    </tr>
+                    <tr>
+                        <td>CÓDIGO FUENTE + submódulos.zip</td>
+                        <td>2,75 MB</td>
+                        <td>14 de septiembre de 2024</td>
+                        <td>Fuente</td>
+                        <td><a href="CÓDIGO FUENTE + submódulos.zip" class="download-link" download>Descargar</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('section');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    navLinks.forEach(nav => nav.classList.remove('nav-active'));
+                    this.classList.add('nav-active');
+                    
+                    sections.forEach(section => section.classList.remove('active-section'));
+                    
+                    const sectionId = this.getAttribute('data-section');
+                    document.getElementById(sectionId).classList.add('active-section');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
