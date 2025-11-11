@@ -37,20 +37,22 @@
             display: flex;
             list-style: none;
             justify-content: center;
+            flex-wrap: wrap;
         }
         
         nav li {
-            margin: 0 20px;
+            margin: 5px 15px;
         }
         
         nav a {
             color: #ffffff;
             text-decoration: none;
-            font-size: 18px;
+            font-size: clamp(16px, 4vw, 18px);
             font-weight: 600;
             padding: 8px 16px;
             border-radius: 4px;
             transition: all 0.3s ease;
+            display: inline-block;
         }
         
         nav a:hover {
@@ -62,7 +64,7 @@
         }
         
         section {
-            padding: 100px 0;
+            padding: clamp(40px, 8vw, 100px) 0;
             display: none;
         }
         
@@ -74,39 +76,38 @@
             margin-bottom: 20px;
             text-align: center;
             color: #f6f0f0;
-            font-size: 100px;
-             font-family: Verdana, sans-serif;
+            font-size: clamp(2.5rem, 10vw, 6rem);
+            font-family: Verdana, sans-serif;
+            line-height: 1.2;
         }
-         h2 {
+        
+        h2 {
             margin-bottom: 20px;
             text-align: left;
-            color: #f6f0f0;.contenedor-flex {
-            display: flex;
-            gap: 20px;
-            padding: 20px;
-            border: 2px solid #ddd;
-            border-radius: 10px;
-            margin: 20px 0;
-            
-        }
+            color: #f6f0f0;
+            font-size: clamp(1.5rem, 5vw, 2rem);
         }
         
         .download-table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 30px;
+            overflow-x: auto;
+            display: block;
         }
         
         .download-table th {
             background-color: #000c8b;
             color: white;
-            padding: 15px;
+            padding: clamp(10px, 3vw, 15px);
             text-align: left;
+            font-size: clamp(14px, 3vw, 16px);
         }
         
         .download-table td {
-            padding: 12px 15px;
+            padding: clamp(8px, 2vw, 12px) clamp(10px, 2vw, 15px);
             border-bottom: 1px solid rgb(29, 35, 66);
+            font-size: clamp(12px, 3vw, 14px);
         }
         
         .download-table tr:nth-child(even) {
@@ -117,10 +118,13 @@
             display: inline-block;
             background-color: #685774;
             color: white;
-            padding: 8px 15px;
+            padding: clamp(6px, 2vw, 8px) clamp(10px, 2vw, 15px);
             border-radius: 4px;
             text-decoration: none;
             font-weight: 600;
+            font-size: clamp(12px, 3vw, 14px);
+            text-align: center;
+            min-width: 80px;
         }
         
         .download-link:hover {
@@ -133,19 +137,29 @@
             margin-top: 50px;
             text-align: center;
         }
-                .contenedor-flex {
+        
+        .contenedor-flex {
             display: flex;
             align-items: center;
-            gap: 20px;
-            padding: 20px;
+            gap: clamp(15px, 4vw, 30px);
+            padding: clamp(15px, 4vw, 30px);
             border: 2px solid #dddddd00;
             border-radius: 10px;
             margin: 20px 0;
+            flex-direction: column;
+        }
+        
+        @media (min-width: 768px) {
+            .contenedor-flex {
+                flex-direction: row;
+            }
         }
 
         .imagen-flex {
-            width: 700px;
-            height: 500px;
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            aspect-ratio: 7/5;
             object-fit: cover;
             border-radius: 8px;
         }
@@ -153,9 +167,46 @@
         .texto-flex {
             font-family: "Times New Roman", serif;
             flex: 1;
-            font-size: 27px;
-            padding: 15px;
-            border-radius: 5px;}
+            font-size: clamp(16px, 4vw, 27px);
+            padding: clamp(10px, 3vw, 20px);
+            border-radius: 5px;
+            text-align: center;
+        }
+        
+        @media (min-width: 768px) {
+            .texto-flex {
+                text-align: left;
+            }
+        }
+
+        p {
+            font-size: clamp(14px, 3vw, 18px);
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        @media (min-width: 768px) {
+            p {
+                text-align: left;
+            }
+        }
+
+        /* Mejoras para tabla en móvil */
+        @media (max-width: 768px) {
+            .download-table {
+                font-size: 12px;
+            }
+            
+            .download-table th,
+            .download-table td {
+                padding: 8px 5px;
+            }
+        }
+
+        /* Asegurar que el contenido no se salga en móvil */
+        .container {
+            overflow-x: hidden;
+        }
     </style>
 </head>
 <body>
@@ -170,19 +221,18 @@
 
     <main class="container">
         <section id="inicio" class="active-section">
-              <h1 > GUARDIANES DEL PLANETA</h1>
+            <h1>GUARDIANES DEL PLANETA</h1>
             
-        
-  <div class="contenedor-flex">
-        <img src="rick roll.jpg" 
-             alt="IMAGEN NO DISPONIBLE" 
-             class="imagen-flex">
-        <div class="texto-flex">
-            <p>Únete a Kevin en un emocionante juego de plataformas 2D donde recorrerás paisajes polares llenos de desafíos.</p>
-
-<p>El objetivo es simple pero adictivo: lleva a Kevin de un punto a otro en cada nivel, superando obstáculos y recolectando botellas plásticas que contaminan su hábitat.</p>
-        </div>
-    </div></section>
+            <div class="contenedor-flex">
+                <img src="rick roll.jpg" 
+                     alt="IMAGEN NO DISPONIBLE" 
+                     class="imagen-flex">
+                <div class="texto-flex">
+                    <p>Únete a Kevin en un emocionante juego de plataformas 2D donde recorrerás paisajes polares llenos de desafíos.</p>
+                    <p>El objetivo es simple pero adictivo: lleva a Kevin de un punto a otro en cada nivel, superando obstáculos y recolectando botellas plásticas que contaminan su hábitat.</p>
+                </div>
+            </div>
+        </section>
 
         <section id="descargas">
             <h1>Descargas</h1>
@@ -207,7 +257,6 @@
                         <td>Android</td>
                         <td><a href="https://drive.google.com/file/d/1Dc9yCjXBAVT0xJ_3xsLhk9gQNvPYeASh/view?pli=1" class="download-link" download>Descargar</a></td>
                     </tr>
-                  
                     <tr>
                         <td>Guardianes del planeta .zip</td>
                         <td>--- MB</td>
@@ -247,8 +296,4 @@
         });
     </script>
 </body>
-
 </html>
-
-
-
