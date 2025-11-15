@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guardianes del planeta</title>
+    <title>Guardianes de el Planeta</title>
+        <link rel="icon" type="image/png" href="kevinicono.png">
+    <link rel="apple-touch-icon" href="kevinicono.png">
+    <link rel="icon" type="image/svg+xml" href="kevinicono.png">
     <style>
         * {
             margin: 0;
@@ -13,7 +16,7 @@
         }
         
         body {
-            background: linear-gradient(135deg, #6055f2, #6151f5, #4ca3ef);
+            background: linear-gradient(135deg, #14141d, #2e285b, #1193fc, #2b3c4a);
             color: #ffffff;
             line-height: 1.6;
             min-height: 100vh;
@@ -37,22 +40,20 @@
             display: flex;
             list-style: none;
             justify-content: center;
-            flex-wrap: wrap;
         }
         
         nav li {
-            margin: 5px 15px;
+            margin: 0 20px;
         }
         
         nav a {
             color: #ffffff;
             text-decoration: none;
-            font-size: clamp(16px, 4vw, 18px);
+            font-size: 18px;
             font-weight: 600;
             padding: 8px 16px;
             border-radius: 4px;
             transition: all 0.3s ease;
-            display: inline-block;
         }
         
         nav a:hover {
@@ -64,7 +65,7 @@
         }
         
         section {
-            padding: clamp(40px, 8vw, 100px) 0;
+            padding: 100px 0;
             display: none;
         }
         
@@ -72,59 +73,58 @@
             display: block;
         }
         
-        h1 {
-            margin-bottom: 20px;
+        h1,h2 {
+            margin-bottom: 50px;
             text-align: center;
             color: #f6f0f0;
-            font-size: clamp(2.5rem, 10vw, 6rem);
-            font-family: Verdana, sans-serif;
-            line-height: 1.2;
+            font-size: 100px;
+             font-family: Verdana, sans-serif;
         }
-        
-        h2 {
-            margin-bottom: 20px;
-            text-align: left;
+         h3 {
+            margin-bottom: 50px;
+            text-align: center;
             color: #f6f0f0;
-            font-size: clamp(1.5rem, 5vw, 2rem);
+            font-size: 50px;
+             font-family: Verdana, sans-serif;
+        }
+         h4 {
+            margin-bottom: 50px;
+            text-align: center;
+            color: #f6f0f0;
+            font-size: 30px;
+             font-family: Verdana, sans-serif;
         }
         
         .download-table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 30px;
-            overflow-x: auto;
-            display: block;
         }
         
         .download-table th {
             background-color: #000c8b;
             color: white;
-            padding: clamp(10px, 3vw, 15px);
+            padding: 15px;
             text-align: left;
-            font-size: clamp(14px, 3vw, 16px);
         }
         
         .download-table td {
-            padding: clamp(8px, 2vw, 12px) clamp(10px, 2vw, 15px);
+            padding: 12px 15px;
             border-bottom: 1px solid rgb(29, 35, 66);
-            font-size: clamp(12px, 3vw, 14px);
         }
         
         .download-table tr:nth-child(even) {
-            background-color: rgba(80, 0, 0, 0.2);
+            background-color: rgba(121, 4, 119, 0);
         }
         
         .download-link {
             display: inline-block;
-            background-color: #6c3295;
+            background-color: #6c329500;
             color: white;
-            padding: clamp(6px, 2vw, 8px) clamp(10px, 2vw, 15px);
+            padding: 8px 15px;
             border-radius: 4px;
             text-decoration: none;
             font-weight: 600;
-            font-size: clamp(12px, 3vw, 14px);
-            text-align: center;
-            min-width: 80px;
         }
         
         .download-link:hover {
@@ -137,29 +137,19 @@
             margin-top: 50px;
             text-align: center;
         }
-        
-        .contenedor-flex {
+                .contenedor-flex {
             display: flex;
             align-items: center;
-            gap: clamp(15px, 4vw, 30px);
-            padding: clamp(15px, 4vw, 30px);
+            gap: 20px;
+            padding: 20px;
             border: 2px solid #dddddd00;
             border-radius: 10px;
             margin: 20px 0;
-            flex-direction: column;
-        }
-        
-        @media (min-width: 768px) {
-            .contenedor-flex {
-                flex-direction: row;
-            }
         }
 
         .imagen-flex {
-            width: 100%;
-            max-width: 700px;
-            height: auto;
-            aspect-ratio: 7/5;
+            width: 700px;
+            height: 500px;
             object-fit: cover;
             border-radius: 8px;
         }
@@ -167,76 +157,42 @@
         .texto-flex {
             font-family: "Times New Roman", serif;
             flex: 1;
-            font-size: clamp(16px, 4vw, 27px);
-            padding: clamp(10px, 3vw, 20px);
-            border-radius: 5px;
-            text-align: center;
-        }
-        
-        @media (min-width: 768px) {
-            .texto-flex {
-                text-align: left;
-            }
-        }
-
-        p {
-            font-size: clamp(14px, 3vw, 18px);
-            margin-bottom: 15px;
-            text-align: center;
-        }
-        
-        @media (min-width: 768px) {
-            p {
-                text-align: left;
-            }
-        }
-
-        /* Mejoras para tabla en móvil */
-        @media (max-width: 768px) {
-            .download-table {
-                font-size: 12px;
-            }
-            
-            .download-table th,
-            .download-table td {
-                padding: 8px 5px;
-            }
-        }
-
-        /* Asegurar que el contenido no se salga en móvil */
-        .container {
-            overflow-x: hidden;
-        }
+            font-size: 27px;
+            padding: 15px;
+            border-radius: 5px;}
     </style>
 </head>
 <body>
     <nav>
-        <div class="container">
-            <ul>
-                <li><a href="#" class="nav-link nav-active" data-section="inicio">Inicio</a></li>
-                <li><a href="#" class="nav-link" data-section="descargas">Descargas</a></li>
-            </ul>
-        </div>
+<div class="container">
+    <ul>
+        <li><a href="#" class="nav-link nav-active" data-section="inicio">Inicio</a></li>
+        <li><a href="#" class="nav-link" data-section="descargas">Descargas</a></li>
+        <li><a href="comentarios.html" class="nav-link">Comentarios</a></li>
+    </ul>
+</div>
     </nav>
 
     <main class="container">
         <section id="inicio" class="active-section">
-            <h1>GUARDIANES DEL PLANETA</h1>
+              <h1 > GUARDIANES DEL PLANETA</h1>
+              <h2>↓</h2>
             
-            <div class="contenedor-flex">
-                <img src="rick roll.jpg" 
-                     alt="IMAGEN NO DISPONIBLE" 
-                     class="imagen-flex">
-                <div class="texto-flex">
-                    <p>Únete a Kevin en un emocionante juego de plataformas 2D donde recorrerás paisajes polares llenos de desafíos.</p>
-                    <p>El objetivo es simple pero adictivo: lleva a Kevin de un punto a otro en cada nivel, superando obstáculos y recolectando botellas plásticas que contaminan su hábitat.</p>
-                </div>
-            </div>
-        </section>
+        
+  <div class="contenedor-flex">
+        <img src="juegocap.png" 
+             alt="IMAGEN NO DISPONIBLE" 
+             class="imagen-flex">
+        <div class="texto-flex">
+            <p>Únete a Kevin en un emocionante juego de plataformas 2D donde recorrerás paisajes polares llenos de desafíos.</p>
 
+<p>El objetivo es simple pero adictivo: lleva a Kevin de un punto a otro en cada nivel, superando obstáculos y recolectando botellas plásticas que contaminan su hábitat.</p>
+        </div>
+    </div></section>
+ 
         <section id="descargas">
-            <h1>Descargas</h1>
-            <h2>Versiones Disponibles</h2>
+            <h3>Descargas</h3>
+            <h4>Versiones Disponibles</h4>
             <p>Selecciona tu plataforma:</p>
             
             <table class="download-table">
@@ -251,18 +207,46 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>La odisea de osito</td>
+                        <td>rick roll</td>
                         <td>53,1 MB</td>
                         <td>14 de septiembre de 2024</td>
                         <td>Android</td>
-                        <td><a href="https://drive.google.com/file/d/1Dc9yCjXBAVT0xJ_3xsLhk9gQNvPYeASh/view?pli=1" class="download-link" download>Descargar</a></td>
+                        <td><a href="rick roll.jpg" class="download-link" download>Descargar</a></td>
                     </tr>
                     <tr>
-                        <td>Guardianes del planeta .zip</td>
-                        <td>--- MB</td>
+                        <td>libresprite-development-linux-x86_64.tar.gz</td>
+                        <td>43,9 MB</td>
+                        <td>14 de septiembre de 2024</td>
+                        <td>Linux</td>
+                        <td><a href="libresprite-development-linux-x86_64.tar.gz" class="download-link" download>Descargar</a></td>
+                    </tr>
+                    <tr>
+                        <td>libresprite-development-macos-arm64.dmg</td>
+                        <td>22,3 MB</td>
+                        <td>14 de septiembre de 2024</td>
+                        <td>macOS</td>
+                        <td><a href="libresprite-development-macos-arm64.dmg" class="download-link" download>Descargar</a></td>
+                    </tr>
+                    <tr>
+                        <td>libresprite-development-windows-x86_64.zip</td>
+                        <td>48,6 MB</td>
+                        <td>14 de septiembre de 2024</td>
+                        <td>Windows</td>
+                        <td><a href="libresprite-development-windows-x86_64.zip" class="download-link" download>Descargar</a></td>
+                    </tr>
+                    <tr>
+                        <td>CÓDIGO FUENTE + submódulos.tar.gz</td>
+                        <td>2,06 MB</td>
                         <td>14 de septiembre de 2024</td>
                         <td>Fuente</td>
-                        <td><a href="----" class="download-link" download>Descargar</a></td>
+                        <td><a href="CÓDIGO FUENTE + submódulos.tar.gz" class="download-link" download>Descargar</a></td>
+                    </tr>
+                    <tr>
+                        <td>CÓDIGO FUENTE + submódulos.zip</td>
+                        <td>2,75 MB</td>
+                        <td>14 de septiembre de 2024</td>
+                        <td>Fuente</td>
+                        <td><a href="CÓDIGO FUENTE + submódulos.zip" class="download-link" download>Descargar</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -294,8 +278,7 @@
                 });
             });
         });
+        
     </script>
 </body>
 </html>
-
-
