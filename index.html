@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guardianes de el Planeta</title>
-        <link rel="icon" type="image/png" href="kevinicono.png">
+    <title>Guardianes del Planeta</title>
+    <link rel="icon" type="image/png" href="kevinicono.png">
     <link rel="apple-touch-icon" href="kevinicono.png">
     <link rel="icon" type="image/svg+xml" href="kevinicono.png">
     <style>
@@ -78,21 +78,23 @@
             text-align: center;
             color: #f6f0f0;
             font-size: 100px;
-             font-family: Verdana, sans-serif;
+            font-family: Verdana, sans-serif;
         }
-         h3 {
+        
+        h3 {
             margin-bottom: 50px;
             text-align: center;
             color: #f6f0f0;
             font-size: 50px;
-             font-family: Verdana, sans-serif;
+            font-family: Verdana, sans-serif;
         }
-         h4 {
+        
+        h4 {
             margin-bottom: 50px;
             text-align: center;
             color: #f6f0f0;
             font-size: 30px;
-             font-family: Verdana, sans-serif;
+            font-family: Verdana, sans-serif;
         }
         
         .download-table {
@@ -137,7 +139,8 @@
             margin-top: 50px;
             text-align: center;
         }
-                .contenedor-flex {
+        
+        .contenedor-flex {
             display: flex;
             align-items: center;
             gap: 20px;
@@ -159,40 +162,37 @@
             flex: 1;
             font-size: 27px;
             padding: 15px;
-            border-radius: 5px;}
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
+    <!-- NAVEGACIÓN CORREGIDA -->
     <nav>
-<div class="container">
-    <nav>
-    <div class="container">
-        <ul>
-            <li><a href="#" class="nav-link nav-active" data-section="inicio">Inicio</a></li>
-            <li><a href="#" class="nav-link" data-section="descargas">Descargas</a></li>
-            <li><a href="comentarios.html" class="nav-link">Comentarios</a></li>
-        </ul>
-    </div>
-</nav>
-</div>
+        <div class="container">
+            <ul>
+                <li><a href="#" class="nav-link nav-active" data-section="inicio">Inicio</a></li>
+                <li><a href="#" class="nav-link" data-section="descargas">Descargas</a></li>
+                <li><a href="comentarios.html" class="nav-link">Comentarios</a></li>
+            </ul>
+        </div>
     </nav>
 
     <main class="container">
         <section id="inicio" class="active-section">
-              <h1 > GUARDIANES DEL PLANETA</h1>
-              <h2>↓</h2>
+            <h1>GUARDIANES DEL PLANETA</h1>
+            <h2>↓</h2>
             
-        
-  <div class="contenedor-flex">
-        <img src="juegocap.png" 
-             alt="IMAGEN NO DISPONIBLE" 
-             class="imagen-flex">
-        <div class="texto-flex">
-            <p>Únete a Kevin en un emocionante juego de plataformas 2D donde recorrerás paisajes polares llenos de desafíos.</p>
-
-<p>El objetivo es simple pero adictivo: lleva a Kevin de un punto a otro en cada nivel, superando obstáculos y recolectando botellas plásticas que contaminan su hábitat.</p>
-        </div>
-    </div></section>
+            <div class="contenedor-flex">
+                <img src="juegocap.png" 
+                     alt="IMAGEN NO DISPONIBLE" 
+                     class="imagen-flex">
+                <div class="texto-flex">
+                    <p>Únete a Kevin en un emocionante juego de plataformas 2D donde recorrerás paisajes polares llenos de desafíos.</p>
+                    <p>El objetivo es simple pero adictivo: lleva a Kevin de un punto a otro en cada nivel, superando obstáculos y recolectando botellas plásticas que contaminan su hábitat.</p>
+                </div>
+            </div>
+        </section>
  
         <section id="descargas">
             <h3>Descargas</h3>
@@ -270,6 +270,11 @@
             
             navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
+                    // Si el enlace es a otra página, no prevenir el comportamiento por defecto
+                    if (this.getAttribute('href') && this.getAttribute('href') !== '#') {
+                        return; // Permitir la navegación normal
+                    }
+                    
                     e.preventDefault();
                     
                     navLinks.forEach(nav => nav.classList.remove('nav-active'));
@@ -282,8 +287,6 @@
                 });
             });
         });
-        
     </script>
 </body>
-
 </html>
